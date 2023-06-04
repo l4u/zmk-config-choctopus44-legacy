@@ -34,6 +34,8 @@ jobs:
       - name: West Init
         run: west init -l config
       - name: West Update
+        env:
+          ZMK_REF: ${{ env.ZMK_REF }}
         run: west update
       - name: West Zephyr export
         run: west zephyr-export
